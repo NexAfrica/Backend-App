@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 
 // use of cors and body parse
-app.use(cors({origin:'*'}))
+app.use(cors({ origin: '*' }));
 
 
 // route - home route

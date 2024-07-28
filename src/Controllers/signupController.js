@@ -4,10 +4,10 @@ import User from '../Models/user.js';
 
 class signupController {
   static async getUser(req, res) {
-    const { fullname, email, password,phone,country } = req.body;
-    if (!fullname || !email || !password || !phone || !country ) {
+    const { fullname, email, password,userName } = req.body;
+    if (!fullname || !email || !password || !userName ) {
       return res.status(400).json({
-        message: "Names, email, and password, phone,country are all required",
+        message: "Names, email, and password, userName are all required",
         
       });
     }
@@ -29,8 +29,7 @@ class signupController {
         const newUser = await User.create({
           fullname,
           email,
-          phone,
-          country,
+          userName,
           password: hashedPassword,
         });
 
