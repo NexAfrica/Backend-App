@@ -23,8 +23,8 @@ const requestOtpController = async (req, res) => {
     // Send the OTP via email
     await sendEmail(user.email, "Your OTP Code", `Your OTP code is ${otp}. It expires in 5 minutes.`);
 
-    return res.status(200).json({ message: "OTP sent to email." });
-
+console.log(otp)
+return res.status(200).json({ message: "OTP sent to email." ,});
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
