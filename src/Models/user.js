@@ -39,7 +39,15 @@ const userSchema = new mongoose.Schema({
     type:String,
     default: Date.now
    
- }
+ },
+ otpCode: {
+   type: String,
+   required: false,  
+ },
+ otpExpires: {
+   type: Date,
+   required: false,
+ },
 })
 // define the compare password function (this help to compare the harshed password and the entered password)
 
